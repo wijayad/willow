@@ -14,5 +14,8 @@ Analysis of ultra-high density neural recordings using the Willow system. These 
  
 ## Recommended Workflow
 
+`looking_at_data.py` is used solely to visualize data. This is an optional script that can be run as a sanity check.
 
+1. `SpikeDetection.py` should be the first script used for any data analysis. Note that both the filepath and the name for the input h5 file at the top should be changed.
 
+2. The remaining two scripts (`SNR_plot_project.py` and `granular_molecular_relationship_MLmapping.py`) can be run once `SpikeDetection.py` has been run. Both scripts use file outputs from the `SpikeDetection.py` script, though please note that not all of `SpikeDetection.py` needs to be run to provide the required file inputs: `SNR_plot_project.py` requires that the first code section (`initial data processing - opening and filtering`) to be run while `granular_molecular_relationship_MLmapping.py` requires most of the the `SpikeDetection.py` script to be run (sans all the visualizations). Please also note that output filenames (and resulting input filenames) can be changed as desired.
